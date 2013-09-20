@@ -55,6 +55,7 @@
 		B787751817EB07AF00EFAFD1 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = B787751717EB07AF00EFAFD1 /* Account.m */; };
 		B787751B17EB0A5C00EFAFD1 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = B787751A17EB0A5B00EFAFD1 /* Contact.m */; };
 		B787751E17EB0AA700EFAFD1 /* ContactsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B787751D17EB0AA700EFAFD1 /* ContactsStore.m */; };
+		B78CFC4517EC2692008AD9C3 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B78CFC4417EC2692008AD9C3 /* AccountViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -262,6 +263,8 @@
 		B787751A17EB0A5B00EFAFD1 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		B787751C17EB0AA600EFAFD1 /* ContactsStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactsStore.h; path = ../../ContactsStore.h; sourceTree = "<group>"; };
 		B787751D17EB0AA700EFAFD1 /* ContactsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactsStore.m; path = ../../ContactsStore.m; sourceTree = "<group>"; };
+		B78CFC4317EC2692008AD9C3 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		B78CFC4417EC2692008AD9C3 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -375,6 +378,8 @@
 				B787751A17EB0A5B00EFAFD1 /* Contact.m */,
 				B787751C17EB0AA600EFAFD1 /* ContactsStore.h */,
 				B787751D17EB0AA700EFAFD1 /* ContactsStore.m */,
+				B78CFC4317EC2692008AD9C3 /* AccountViewController.h */,
+				B78CFC4417EC2692008AD9C3 /* AccountViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -802,6 +807,7 @@
 				B787751817EB07AF00EFAFD1 /* Account.m in Sources */,
 				B787751B17EB0A5C00EFAFD1 /* Contact.m in Sources */,
 				B787751E17EB0AA700EFAFD1 /* ContactsStore.m in Sources */,
+				B78CFC4517EC2692008AD9C3 /* AccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

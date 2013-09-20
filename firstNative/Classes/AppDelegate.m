@@ -30,7 +30,7 @@
 #import "SFOAuthInfo.h"
 #import "SFLogger.h"
 #import "MasterViewController.h"
-#import "ContactViewController.h"
+#import "AccountViewController.h"
 
 
 // Fill these in when creating a new Connected Application on Force.com
@@ -150,7 +150,8 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
     UINavigationController *navMVC = [[UINavigationController alloc] initWithRootViewController:mVC];
     
     //Left side view contents
-   RootViewController *dVC = [[RootViewController alloc] initWithNibName:nil bundle:nil];
+   //RootViewController *dVC = [[RootViewController alloc] initWithNibName:nil bundle:nil];
+    AccountViewController *dVC = [[AccountViewController alloc] initWithNibName:nil bundle:nil];
     
     UINavigationController *detNavVC = [[UINavigationController alloc] initWithRootViewController:dVC];
 

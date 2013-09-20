@@ -1,26 +1,25 @@
 //
-//  MasterViewController.m
+//  AccountViewController.m
 //  firstNative
 //
-//  Created by sudheer mangalpady on 9/19/13.
+//  Created by sudheer mangalpady on 9/20/13.
 //  Copyright (c) 2013 Centurylink. All rights reserved.
 //
 
-#import "MasterViewController.h"
+#import "AccountViewController.h"
 
-@interface MasterViewController ()
+@interface AccountViewController ()
 
 @end
 
-@implementation MasterViewController
-
+@implementation AccountViewController
+@synthesize dataRows;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-        
     }
     return self;
 }
@@ -34,7 +33,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    arrayOfMainViewItems = [NSArray arrayWithObjects:@"Contacts", @"Accounts", @"Availability", @"Pricing", @"Maps", nil];
+    SFRestRequest *request = [[SFRestAPI sharedInstance] requestForQuery:@"SELECT Name FROM Account LIMIT 10"];
+    [[SFRestAPI sharedInstance] send:request delegate:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,28 +47,30 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     // Return the number of rows in the section.
-    return [arrayOfMainViewItems count];
+    return [self.dataRows count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell...
-    [[cell textLabel] setText:[arrayOfMainViewItems objectAtIndex:[indexPath row]]];
+    // Configure the cell to show the data.
+	NSDictionary *obj = [dataRows objectAtIndex:indexPath.row];
+	cell.textLabel.text =  [obj objectForKey:@"Name"];
     
     return cell;
 }
@@ -123,16 +125,32 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-    
-   
-    
- 
+}
 
+#pragma mark - SFRestAPIDelegate
+
+- (void)request:(SFRestRequest *)request didLoadResponse:(id)jsonResponse {
+    NSArray *records = [jsonResponse objectForKey:@"records"];
+    NSLog(@"request:didLoadResponse: #records: %d", records.count);
+    self.dataRows = records;
+    [self.tableView reloadData];
 }
-- (void)viewDidAppear:(BOOL)animated
-{
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [[self tableView] selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionBottom];
+
+
+- (void)request:(SFRestRequest*)request didFailLoadWithError:(NSError*)error {
+    NSLog(@"request:didFailLoadWithError: %@", error);
+    //add your failed error handling here
 }
+
+- (void)requestDidCancelLoad:(SFRestRequest *)request {
+    NSLog(@"requestDidCancelLoad: %@", request);
+    //add your failed error handling here
+}
+
+- (void)requestDidTimeout:(SFRestRequest *)request {
+    NSLog(@"requestDidTimeout: %@", request);
+    //add your failed error handling here
+}
+
 
 @end
