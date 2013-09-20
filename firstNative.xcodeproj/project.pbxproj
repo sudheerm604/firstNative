@@ -56,6 +56,8 @@
 		B787751B17EB0A5C00EFAFD1 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = B787751A17EB0A5B00EFAFD1 /* Contact.m */; };
 		B787751E17EB0AA700EFAFD1 /* ContactsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B787751D17EB0AA700EFAFD1 /* ContactsStore.m */; };
 		B78CFC4517EC2692008AD9C3 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B78CFC4417EC2692008AD9C3 /* AccountViewController.m */; };
+		B78CFC4917EC30F0008AD9C3 /* PricingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B78CFC4717EC30EF008AD9C3 /* PricingViewController.m */; };
+		B78CFC4A17EC30F0008AD9C3 /* PricingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B78CFC4817EC30F0008AD9C3 /* PricingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -265,6 +267,9 @@
 		B787751D17EB0AA700EFAFD1 /* ContactsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactsStore.m; path = ../../ContactsStore.m; sourceTree = "<group>"; };
 		B78CFC4317EC2692008AD9C3 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		B78CFC4417EC2692008AD9C3 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		B78CFC4617EC30EF008AD9C3 /* PricingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PricingViewController.h; sourceTree = "<group>"; };
+		B78CFC4717EC30EF008AD9C3 /* PricingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PricingViewController.m; sourceTree = "<group>"; };
+		B78CFC4817EC30F0008AD9C3 /* PricingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PricingViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,6 +385,9 @@
 				B787751D17EB0AA700EFAFD1 /* ContactsStore.m */,
 				B78CFC4317EC2692008AD9C3 /* AccountViewController.h */,
 				B78CFC4417EC2692008AD9C3 /* AccountViewController.m */,
+				B78CFC4617EC30EF008AD9C3 /* PricingViewController.h */,
+				B78CFC4717EC30EF008AD9C3 /* PricingViewController.m */,
+				B78CFC4817EC30F0008AD9C3 /* PricingViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -788,6 +796,7 @@
 				824A9FDF1725079100C9BD79 /* openssl_license.txt in Resources */,
 				824A9FE61725079100C9BD79 /* LICENSE in Resources */,
 				B787750A17EAE4B400EFAFD1 /* MasterViewController.xib in Resources */,
+				B78CFC4A17EC30F0008AD9C3 /* PricingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,6 +817,7 @@
 				B787751B17EB0A5C00EFAFD1 /* Contact.m in Sources */,
 				B787751E17EB0AA700EFAFD1 /* ContactsStore.m in Sources */,
 				B78CFC4517EC2692008AD9C3 /* AccountViewController.m in Sources */,
+				B78CFC4917EC30F0008AD9C3 /* PricingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
