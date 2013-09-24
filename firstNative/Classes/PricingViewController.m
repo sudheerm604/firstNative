@@ -36,13 +36,17 @@
 }
 
 - (IBAction)qualifyByTN:(id)sender {
+    
+}
+- (IBAction)qualifyByAddress:(id)sender {
 }
 
 - (IBAction)clearTN:(id)sender {
+    [[self telephoneNumber] setText:nil];
 }
 
-- (IBAction)qualifyByAddress:(id)sender {
-}
+
 - (IBAction)clearAddress:(id)sender {
+    [[self addressZIP] setText:nil];
 }
 @end

@@ -7,6 +7,11 @@
 //
 
 #import "MasterViewController.h"
+#import "AppDelegate.h"
+#import "AccountViewController.h"
+#import "RootViewController.h"
+#import "ProductViewController.h"
+
 
 @interface MasterViewController ()
 
@@ -34,7 +39,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    arrayOfMainViewItems = [NSArray arrayWithObjects:@"Contacts", @"Accounts", @"Availability", @"Pricing", @"Maps", nil];
+    arrayOfMainViewItems = [NSArray arrayWithObjects:@"Contacts", @"Accounts", @"Products", @"Availability", @"Pricing", @"Maps", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -123,9 +128,45 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    NSUInteger row = [indexPath row];
+    NSMutableArray *viewControllerArray = [[NSMutableArray alloc] initWithArray:self.splitViewController.viewControllers];
     
-   
+    [viewControllerArray removeLastObject];
+    if (row == 0)
+    {
+        RootViewController *rVC = [[RootViewController alloc] initWithNibName:nil bundle:nil];
+        [viewControllerArray addObject:rVC];
+    } else if (row == 1)
+    {
+        AccountViewController *aVC = [[AccountViewController alloc] initWithNibName:nil bundle:nil];
+        [viewControllerArray addObject:aVC];
+    } else if (row == 2)
+    {
+        ProductViewController *pVC = [[ProductViewController alloc] initWithNibName:nil bundle:nil];
+        [viewControllerArray addObject:pVC];
+    }
+    [[self splitViewController] setViewControllers:viewControllerArray];
     
+    
+    /*
+    UIViewController *detailViewController = nil;
+    if (row == 0)
+    {
+        RootViewController *rVC = [[RootViewController alloc] initWithNibName:nil bundle:nil];
+        detailViewController = rVC;
+    } else if (row == 1)
+    {
+        AccountViewController *aVC = [[AccountViewController alloc] initWithNibName:nil bundle:nil];
+        detailViewController = aVC;
+    }
+    
+    if (detailViewController!=nil)
+    {
+        NSArray *viewControllers = [[NSArray alloc] initWithObjects:self.navigationController, detailViewController, nil];
+        self.splitViewController.viewControllers = viewControllers;
+    }
+
+    */
  
 
 }

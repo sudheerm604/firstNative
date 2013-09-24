@@ -58,7 +58,7 @@
     //Here we use a query that should work on either Force.com or Database.com
     
     
-    SFRestRequest *request = [[SFRestAPI sharedInstance] requestForQuery:@"SELECT Name FROM User LIMIT 10"];    
+    SFRestRequest *request = [[SFRestAPI sharedInstance] requestForQuery:@"SELECT Name FROM User LIMIT 25"];    
     [[SFRestAPI sharedInstance] send:request delegate:self];
 
 }

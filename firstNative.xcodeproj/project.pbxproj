@@ -58,6 +58,8 @@
 		B78CFC4517EC2692008AD9C3 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B78CFC4417EC2692008AD9C3 /* AccountViewController.m */; };
 		B78CFC4917EC30F0008AD9C3 /* PricingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B78CFC4717EC30EF008AD9C3 /* PricingViewController.m */; };
 		B78CFC4A17EC30F0008AD9C3 /* PricingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B78CFC4817EC30F0008AD9C3 /* PricingViewController.xib */; };
+		B78CFC4F17EC42B0008AD9C3 /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B78CFC4D17EC42B0008AD9C3 /* ProductViewController.m */; };
+		B78CFC5017EC42B0008AD9C3 /* ProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B78CFC4E17EC42B0008AD9C3 /* ProductViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -270,6 +272,9 @@
 		B78CFC4617EC30EF008AD9C3 /* PricingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PricingViewController.h; sourceTree = "<group>"; };
 		B78CFC4717EC30EF008AD9C3 /* PricingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PricingViewController.m; sourceTree = "<group>"; };
 		B78CFC4817EC30F0008AD9C3 /* PricingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PricingViewController.xib; sourceTree = "<group>"; };
+		B78CFC4C17EC42B0008AD9C3 /* ProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductViewController.h; sourceTree = "<group>"; };
+		B78CFC4D17EC42B0008AD9C3 /* ProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductViewController.m; sourceTree = "<group>"; };
+		B78CFC4E17EC42B0008AD9C3 /* ProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +370,7 @@
 		824A9E301724E2A900C9BD79 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B78CFC4B17EC4241008AD9C3 /* Model Classes */,
 				B787750617EAE4B400EFAFD1 /* MasterViewController.h */,
 				B787750717EAE4B400EFAFD1 /* MasterViewController.m */,
 				B787750817EAE4B400EFAFD1 /* MasterViewController.xib */,
@@ -375,19 +381,14 @@
 				824A9E391724E58200C9BD79 /* InitialViewController.xib */,
 				824A9E341724E45000C9BD79 /* RootViewController.h */,
 				824A9E351724E45100C9BD79 /* RootViewController.m */,
-				B787751317EB076700EFAFD1 /* AccountsStore.h */,
-				B787751417EB076700EFAFD1 /* AccountsStore.m */,
-				B787751617EB07AF00EFAFD1 /* Account.h */,
-				B787751717EB07AF00EFAFD1 /* Account.m */,
-				B787751917EB0A5B00EFAFD1 /* Contact.h */,
-				B787751A17EB0A5B00EFAFD1 /* Contact.m */,
-				B787751C17EB0AA600EFAFD1 /* ContactsStore.h */,
-				B787751D17EB0AA700EFAFD1 /* ContactsStore.m */,
 				B78CFC4317EC2692008AD9C3 /* AccountViewController.h */,
 				B78CFC4417EC2692008AD9C3 /* AccountViewController.m */,
 				B78CFC4617EC30EF008AD9C3 /* PricingViewController.h */,
 				B78CFC4717EC30EF008AD9C3 /* PricingViewController.m */,
 				B78CFC4817EC30F0008AD9C3 /* PricingViewController.xib */,
+				B78CFC4C17EC42B0008AD9C3 /* ProductViewController.h */,
+				B78CFC4D17EC42B0008AD9C3 /* ProductViewController.m */,
+				B78CFC4E17EC42B0008AD9C3 /* ProductViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -726,6 +727,21 @@
 			path = SalesforceCommonUtils;
 			sourceTree = "<group>";
 		};
+		B78CFC4B17EC4241008AD9C3 /* Model Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B787751317EB076700EFAFD1 /* AccountsStore.h */,
+				B787751417EB076700EFAFD1 /* AccountsStore.m */,
+				B787751617EB07AF00EFAFD1 /* Account.h */,
+				B787751717EB07AF00EFAFD1 /* Account.m */,
+				B787751917EB0A5B00EFAFD1 /* Contact.h */,
+				B787751A17EB0A5B00EFAFD1 /* Contact.m */,
+				B787751C17EB0AA600EFAFD1 /* ContactsStore.h */,
+				B787751D17EB0AA700EFAFD1 /* ContactsStore.m */,
+			);
+			name = "Model Classes";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -797,6 +813,7 @@
 				824A9FE61725079100C9BD79 /* LICENSE in Resources */,
 				B787750A17EAE4B400EFAFD1 /* MasterViewController.xib in Resources */,
 				B78CFC4A17EC30F0008AD9C3 /* PricingViewController.xib in Resources */,
+				B78CFC5017EC42B0008AD9C3 /* ProductViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,6 +835,7 @@
 				B787751E17EB0AA700EFAFD1 /* ContactsStore.m in Sources */,
 				B78CFC4517EC2692008AD9C3 /* AccountViewController.m in Sources */,
 				B78CFC4917EC30F0008AD9C3 /* PricingViewController.m in Sources */,
+				B78CFC4F17EC42B0008AD9C3 /* ProductViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

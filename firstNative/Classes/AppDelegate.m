@@ -148,19 +148,19 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
 {
     //Right side View contents
     MasterViewController *mVC = [[MasterViewController alloc] initWithNibName:nil bundle:nil];
-    UINavigationController *navMVC = [[UINavigationController alloc] initWithRootViewController:mVC];
+    //UINavigationController *navMVC = [[UINavigationController alloc] initWithRootViewController:mVC];
     
     //Left side view contents
-   //RootViewController *dVC = [[RootViewController alloc] initWithNibName:nil bundle:nil];
-    //AccountViewController *dVC = [[AccountViewController alloc] initWithNibName:nil bundle:nil];
-    PricingViewController *dVC = [[PricingViewController alloc] initWithNibName:nil bundle:nil];
+   RootViewController *dVC = [[RootViewController alloc] initWithNibName:nil bundle:nil];
+   //AccountViewController *dVC = [[AccountViewController alloc] initWithNibName:nil bundle:nil];
+   // PricingViewController *dVC = [[PricingViewController alloc] initWithNibName:nil bundle:nil];
     
     
-    UINavigationController *detNavVC = [[UINavigationController alloc] initWithRootViewController:dVC];
+   // UINavigationController *detNavVC = [[UINavigationController alloc] initWithRootViewController:dVC];
 
     
     UISplitViewController *splitView = [[UISplitViewController alloc] init];
-    NSArray *arrayOfViews = [NSArray arrayWithObjects:navMVC, detNavVC, nil];
+    NSArray *arrayOfViews = [NSArray arrayWithObjects:mVC, dVC, nil];
     
     [splitView setDelegate: dVC];
     [splitView setViewControllers:arrayOfViews];

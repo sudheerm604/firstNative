@@ -1,19 +1,18 @@
 //
-//  AccountViewController.m
+//  ProductViewController.m
 //  firstNative
 //
 //  Created by sudheer mangalpady on 9/20/13.
 //  Copyright (c) 2013 Centurylink. All rights reserved.
 //
 
-#import "AccountViewController.h"
+#import "ProductViewController.h"
 
-@interface AccountViewController ()
+@interface ProductViewController ()
 
 @end
 
-@implementation AccountViewController
-@synthesize dataRows;
+@implementation ProductViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,9 +32,10 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    SFRestRequest *request = [[SFRestAPI sharedInstance] requestForQuery:@"SELECT Name FROM Account LIMIT 25"];
+    SFRestRequest *request = [[SFRestAPI sharedInstance] requestForQuery:@"SELECT Name FROM Product2 LIMIT 25"];
     [[SFRestAPI sharedInstance] send:request delegate:self];
-    self.title = @"Accounts";
+    self.title = @"Products";
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,30 +48,30 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.dataRows count];
+    return [self.dataRows count];;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell...
-    // Configure the cell to show the data.
-	NSDictionary *obj = [dataRows objectAtIndex:indexPath.row];
+    NSDictionary *obj = [dataRows objectAtIndex:indexPath.row];
 	cell.textLabel.text =  [obj objectForKey:@"Name"];
+
     
     return cell;
 }
@@ -128,8 +128,6 @@
      */
 }
 
-#pragma mark - SFRestAPIDelegate
-
 - (void)request:(SFRestRequest *)request didLoadResponse:(id)jsonResponse {
     NSArray *records = [jsonResponse objectForKey:@"records"];
     NSLog(@"request:didLoadResponse: #records: %d", records.count);
@@ -152,6 +150,5 @@
     NSLog(@"requestDidTimeout: %@", request);
     //add your failed error handling here
 }
-
 
 @end
