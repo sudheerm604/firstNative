@@ -124,13 +124,14 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    //self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    // Initialize the app window
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self initializeAppViewState];
     
-       
-    //[self setupRootViewController];
     [[SFAuthenticationManager sharedManager] loginWithCompletion:self.initialLoginSuccessBlock failure:self.initialLoginFailureBlock];
-    
+   
     return YES;
 }
 
@@ -146,33 +147,14 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
 
 - (void)setupRootViewController
 {
-    //Right side View contents
-    MasterViewController *mVC = [[MasterViewController alloc] initWithNibName:nil bundle:nil];
-    //UINavigationController *navMVC = [[UINavigationController alloc] initWithRootViewController:mVC];
     
-    //Left side view contents
-   RootViewController *dVC = [[RootViewController alloc] initWithNibName:nil bundle:nil];
-   //AccountViewController *dVC = [[AccountViewController alloc] initWithNibName:nil bundle:nil];
-   // PricingViewController *dVC = [[PricingViewController alloc] initWithNibName:nil bundle:nil];
-    
-    
-   // UINavigationController *detNavVC = [[UINavigationController alloc] initWithRootViewController:dVC];
+    self.window.rootViewController = self.splitViewController;
+    [self.window makeKeyAndVisible];
 
+    if ([self.splitViewController respondsToSelector:@selector(setPresentsWithGesture:)])
+        [self.splitViewController setPresentsWithGesture:YES];
     
-    UISplitViewController *splitView = [[UISplitViewController alloc] init];
-    NSArray *arrayOfViews = [NSArray arrayWithObjects:mVC, dVC, nil];
-    
-    [splitView setDelegate: dVC];
-    [splitView setViewControllers:arrayOfViews];
-    
-    
-    //self.window.rootViewController = navVC;
-    [[self window] setRootViewController:splitView];
-    [[self window] makeKeyAndVisible];
-
-    
-    
-    
+       
 }
 
 - (void)logoutInitiated:(NSNotification *)notification

@@ -7,19 +7,30 @@
 //
 
 #import "MasterViewController.h"
-#import "AppDelegate.h"
-#import "AccountViewController.h"
-#import "RootViewController.h"
-#import "ProductViewController.h"
+#import "DetailViewManager.h"
+
+#import "ContactsViewController.h"
+#import "AccountsViewController.h"
 
 
 @interface MasterViewController ()
-
+{
+    NSArray *arrayOfMainViewItems;
+}
 @end
 
 @implementation MasterViewController
 
+// -------------------------------------------------------------------------------
+//	shouldAutorotateToInterfaceOrientation:
+// -------------------------------------------------------------------------------
+/*
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
+}
 
+*/
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -78,96 +89,38 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    NSUInteger row = [indexPath row];
-    NSMutableArray *viewControllerArray = [[NSMutableArray alloc] initWithArray:self.splitViewController.viewControllers];
-    
-    [viewControllerArray removeLastObject];
-    if (row == 0)
-    {
-        RootViewController *rVC = [[RootViewController alloc] initWithNibName:nil bundle:nil];
-        [viewControllerArray addObject:rVC];
-    } else if (row == 1)
-    {
-        AccountViewController *aVC = [[AccountViewController alloc] initWithNibName:nil bundle:nil];
-        [viewControllerArray addObject:aVC];
-    } else if (row == 2)
-    {
-        ProductViewController *pVC = [[ProductViewController alloc] initWithNibName:nil bundle:nil];
-        [viewControllerArray addObject:pVC];
-    }
-    [[self splitViewController] setViewControllers:viewControllerArray];
-    
-    
-    /*
-    UIViewController *detailViewController = nil;
-    if (row == 0)
-    {
-        RootViewController *rVC = [[RootViewController alloc] initWithNibName:nil bundle:nil];
-        detailViewController = rVC;
-    } else if (row == 1)
-    {
-        AccountViewController *aVC = [[AccountViewController alloc] initWithNibName:nil bundle:nil];
-        detailViewController = aVC;
-    }
-    
-    if (detailViewController!=nil)
-    {
-        NSArray *viewControllers = [[NSArray alloc] initWithObjects:self.navigationController, detailViewController, nil];
-        self.splitViewController.viewControllers = viewControllers;
-    }
 
-    */
- 
+    DetailViewManager *detailViewManager = (DetailViewManager*)self.splitViewController.delegate;
+    
+    NSUInteger row = indexPath.row;
+    
+    // Create and configure a new detail view controller appropriate for the selection.
+    UIViewController <SubstitutableDetailViewController> *detailViewController = nil;
+    
+    if (row == 0) {
+        
+        
+        ContactsViewController *newDetailViewController = [[ContactsViewController alloc] initWithNibName:nil bundle:nil];
+        
+        detailViewController = newDetailViewController;
+        detailViewManager.detailViewController = detailViewController;
+        
+    }
+    else if (row == 1)
+    {
+        AccountsViewController *newDetailViewController = [[AccountsViewController alloc] initWithNibName:nil bundle:nil];
+        
+        
+        detailViewController = newDetailViewController;
+        detailViewManager.detailViewController = detailViewController;
+        
+        
+    }
 
 }
 - (void)viewDidAppear:(BOOL)animated

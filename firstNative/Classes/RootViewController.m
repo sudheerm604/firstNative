@@ -27,7 +27,7 @@
 
 #import "SFRestAPI.h"
 #import "SFRestRequest.h"
-#import "MasterViewController.h"
+
 
 @implementation RootViewController
 
@@ -43,11 +43,6 @@
     // Relinquish ownership any cached data, images, etc that aren't in use.
 }
 
-- (void)dealloc
-{
-    self.dataRows = nil;
-}
-
 
 #pragma mark - View lifecycle
 - (void)viewDidLoad
@@ -55,12 +50,18 @@
     [super viewDidLoad];
     self.title = @"Contacts";
     
-    //Here we use a query that should work on either Force.com or Database.com
-    
+    if (_navigationPaneBarButtonItem)
+        [self.toolbar setItems:[NSArray arrayWithObject:self.navigationPaneBarButtonItem] animated:NO];
     
     SFRestRequest *request = [[SFRestAPI sharedInstance] requestForQuery:@"SELECT Name FROM User LIMIT 25"];    
     [[SFRestAPI sharedInstance] send:request delegate:self];
 
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
 }
 
 #pragma mark - SFRestAPIDelegate
@@ -122,6 +123,34 @@
 
 	return cell;
 
+}
+
+- (void)dealloc
+{
+    self.toolbar = nil;
+    self.dataRows = nil;
+    self.navigationPaneBarButtonItem = nil;
+}
+
+- (void)viewDidUnload {
+	[super viewDidUnload];
+	self.toolbar = nil;
+    self.dataRows = nil;
+}
+
+- (void)setNavigationPaneBarButtonItem:(UIBarButtonItem *)navigationPaneBarButtonItem
+{
+    if (navigationPaneBarButtonItem != _navigationPaneBarButtonItem) {
+        if (navigationPaneBarButtonItem)
+            [self.toolbar setItems:[NSArray arrayWithObject:navigationPaneBarButtonItem] animated:NO];
+        else
+            [self.toolbar setItems:nil animated:NO];
+    }
+    
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return YES;
 }
 
 

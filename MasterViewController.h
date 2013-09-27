@@ -10,7 +10,7 @@
 
 @interface MasterViewController : UITableViewController
 {
-    NSArray *arrayOfMainViewItems;
+    
     
 }
 

@@ -49,17 +49,22 @@
 		824A9FF617250BFA00C9BD79 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A9FF517250BFA00C9BD79 /* Security.framework */; };
 		824A9FF817250C0100C9BD79 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A9FF717250C0100C9BD79 /* SystemConfiguration.framework */; };
 		8273F18A1778F39F005E31A6 /* libSalesforceCommonUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8273F1881778F39F005E31A6 /* libSalesforceCommonUtils.a */; };
+		B74D160D17F1959C0049F0B0 /* DetailViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B74D160C17F1959C0049F0B0 /* DetailViewManager.m */; };
+		B74D161217F1A8740049F0B0 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74D160F17F1A8740049F0B0 /* MainWindow.xib */; };
+		B74D161317F1A8740049F0B0 /* SecondDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74D161017F1A8740049F0B0 /* SecondDetailView.xib */; };
 		B787750917EAE4B400EFAFD1 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B787750717EAE4B400EFAFD1 /* MasterViewController.m */; };
-		B787750A17EAE4B400EFAFD1 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B787750817EAE4B400EFAFD1 /* MasterViewController.xib */; };
 		B787751517EB076700EFAFD1 /* AccountsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B787751417EB076700EFAFD1 /* AccountsStore.m */; };
 		B787751817EB07AF00EFAFD1 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = B787751717EB07AF00EFAFD1 /* Account.m */; };
 		B787751B17EB0A5C00EFAFD1 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = B787751A17EB0A5B00EFAFD1 /* Contact.m */; };
 		B787751E17EB0AA700EFAFD1 /* ContactsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B787751D17EB0AA700EFAFD1 /* ContactsStore.m */; };
-		B78CFC4517EC2692008AD9C3 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B78CFC4417EC2692008AD9C3 /* AccountViewController.m */; };
 		B78CFC4917EC30F0008AD9C3 /* PricingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B78CFC4717EC30EF008AD9C3 /* PricingViewController.m */; };
 		B78CFC4A17EC30F0008AD9C3 /* PricingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B78CFC4817EC30F0008AD9C3 /* PricingViewController.xib */; };
 		B78CFC4F17EC42B0008AD9C3 /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B78CFC4D17EC42B0008AD9C3 /* ProductViewController.m */; };
 		B78CFC5017EC42B0008AD9C3 /* ProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B78CFC4E17EC42B0008AD9C3 /* ProductViewController.xib */; };
+		B7B163D117F4B22E0065D8EE /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B163CF17F4B22D0065D8EE /* ContactsViewController.m */; };
+		B7B163D217F4B22E0065D8EE /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7B163D017F4B22E0065D8EE /* ContactsViewController.xib */; };
+		B7B163DD17F4FF4C0065D8EE /* AccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B163DB17F4FF4C0065D8EE /* AccountsViewController.m */; };
+		B7B163DE17F4FF4C0065D8EE /* AccountsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7B163DC17F4FF4C0065D8EE /* AccountsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -256,9 +261,12 @@
 		8273F1861778F39F005E31A6 /* UIDevice+SFHardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+SFHardware.h"; sourceTree = "<group>"; };
 		8273F1871778F39F005E31A6 /* UILabel+SFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+SFAdditions.h"; sourceTree = "<group>"; };
 		8273F1881778F39F005E31A6 /* libSalesforceCommonUtils.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSalesforceCommonUtils.a; sourceTree = "<group>"; };
+		B74D160B17F1959C0049F0B0 /* DetailViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewManager.h; sourceTree = "<group>"; };
+		B74D160C17F1959C0049F0B0 /* DetailViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewManager.m; sourceTree = "<group>"; };
+		B74D160F17F1A8740049F0B0 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		B74D161017F1A8740049F0B0 /* SecondDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SecondDetailView.xib; path = ../SecondDetailView.xib; sourceTree = "<group>"; };
 		B787750617EAE4B400EFAFD1 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterViewController.h; path = ../../MasterViewController.h; sourceTree = "<group>"; };
 		B787750717EAE4B400EFAFD1 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MasterViewController.m; path = ../../MasterViewController.m; sourceTree = "<group>"; };
-		B787750817EAE4B400EFAFD1 /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MasterViewController.xib; path = ../../MasterViewController.xib; sourceTree = "<group>"; };
 		B787751317EB076700EFAFD1 /* AccountsStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountsStore.h; sourceTree = "<group>"; };
 		B787751417EB076700EFAFD1 /* AccountsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountsStore.m; sourceTree = "<group>"; };
 		B787751617EB07AF00EFAFD1 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
@@ -267,14 +275,18 @@
 		B787751A17EB0A5B00EFAFD1 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		B787751C17EB0AA600EFAFD1 /* ContactsStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactsStore.h; path = ../../ContactsStore.h; sourceTree = "<group>"; };
 		B787751D17EB0AA700EFAFD1 /* ContactsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactsStore.m; path = ../../ContactsStore.m; sourceTree = "<group>"; };
-		B78CFC4317EC2692008AD9C3 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
-		B78CFC4417EC2692008AD9C3 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		B78CFC4617EC30EF008AD9C3 /* PricingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PricingViewController.h; sourceTree = "<group>"; };
 		B78CFC4717EC30EF008AD9C3 /* PricingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PricingViewController.m; sourceTree = "<group>"; };
 		B78CFC4817EC30F0008AD9C3 /* PricingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PricingViewController.xib; sourceTree = "<group>"; };
 		B78CFC4C17EC42B0008AD9C3 /* ProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductViewController.h; sourceTree = "<group>"; };
 		B78CFC4D17EC42B0008AD9C3 /* ProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductViewController.m; sourceTree = "<group>"; };
 		B78CFC4E17EC42B0008AD9C3 /* ProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductViewController.xib; sourceTree = "<group>"; };
+		B7B163CE17F4B22D0065D8EE /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactsViewController.h; path = ../../ContactsViewController.h; sourceTree = "<group>"; };
+		B7B163CF17F4B22D0065D8EE /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactsViewController.m; path = ../../ContactsViewController.m; sourceTree = "<group>"; };
+		B7B163D017F4B22E0065D8EE /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactsViewController.xib; path = ../../ContactsViewController.xib; sourceTree = "<group>"; };
+		B7B163DA17F4FF4C0065D8EE /* AccountsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountsViewController.h; path = ../../AccountsViewController.h; sourceTree = "<group>"; };
+		B7B163DB17F4FF4C0065D8EE /* AccountsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountsViewController.m; path = ../../AccountsViewController.m; sourceTree = "<group>"; };
+		B7B163DC17F4FF4C0065D8EE /* AccountsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AccountsViewController.xib; path = ../../AccountsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				824A9DE01724E16400C9BD79 /* firstNative-Info.plist */,
+				B74D160F17F1A8740049F0B0 /* MainWindow.xib */,
 				824A9DE11724E16400C9BD79 /* InfoPlist.strings */,
 				824A9DE41724E16400C9BD79 /* main.m */,
 				824A9DE61724E16400C9BD79 /* firstNative-Prefix.pch */,
@@ -370,25 +383,22 @@
 		824A9E301724E2A900C9BD79 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B71A3A7417F1BF4200B33B11 /* uselater */,
 				B78CFC4B17EC4241008AD9C3 /* Model Classes */,
 				B787750617EAE4B400EFAFD1 /* MasterViewController.h */,
 				B787750717EAE4B400EFAFD1 /* MasterViewController.m */,
-				B787750817EAE4B400EFAFD1 /* MasterViewController.xib */,
 				824A9E311724E2A900C9BD79 /* AppDelegate.h */,
 				824A9E321724E2A900C9BD79 /* AppDelegate.m */,
-				824A9E371724E58100C9BD79 /* InitialViewController.h */,
-				824A9E381724E58200C9BD79 /* InitialViewController.m */,
-				824A9E391724E58200C9BD79 /* InitialViewController.xib */,
 				824A9E341724E45000C9BD79 /* RootViewController.h */,
 				824A9E351724E45100C9BD79 /* RootViewController.m */,
-				B78CFC4317EC2692008AD9C3 /* AccountViewController.h */,
-				B78CFC4417EC2692008AD9C3 /* AccountViewController.m */,
-				B78CFC4617EC30EF008AD9C3 /* PricingViewController.h */,
-				B78CFC4717EC30EF008AD9C3 /* PricingViewController.m */,
-				B78CFC4817EC30F0008AD9C3 /* PricingViewController.xib */,
-				B78CFC4C17EC42B0008AD9C3 /* ProductViewController.h */,
-				B78CFC4D17EC42B0008AD9C3 /* ProductViewController.m */,
-				B78CFC4E17EC42B0008AD9C3 /* ProductViewController.xib */,
+				B74D160B17F1959C0049F0B0 /* DetailViewManager.h */,
+				B74D160C17F1959C0049F0B0 /* DetailViewManager.m */,
+				B7B163CE17F4B22D0065D8EE /* ContactsViewController.h */,
+				B7B163CF17F4B22D0065D8EE /* ContactsViewController.m */,
+				B7B163D017F4B22E0065D8EE /* ContactsViewController.xib */,
+				B7B163DA17F4FF4C0065D8EE /* AccountsViewController.h */,
+				B7B163DB17F4FF4C0065D8EE /* AccountsViewController.m */,
+				B7B163DC17F4FF4C0065D8EE /* AccountsViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -727,6 +737,23 @@
 			path = SalesforceCommonUtils;
 			sourceTree = "<group>";
 		};
+		B71A3A7417F1BF4200B33B11 /* uselater */ = {
+			isa = PBXGroup;
+			children = (
+				B74D161017F1A8740049F0B0 /* SecondDetailView.xib */,
+				B78CFC4C17EC42B0008AD9C3 /* ProductViewController.h */,
+				B78CFC4D17EC42B0008AD9C3 /* ProductViewController.m */,
+				B78CFC4E17EC42B0008AD9C3 /* ProductViewController.xib */,
+				B78CFC4617EC30EF008AD9C3 /* PricingViewController.h */,
+				B78CFC4717EC30EF008AD9C3 /* PricingViewController.m */,
+				B78CFC4817EC30F0008AD9C3 /* PricingViewController.xib */,
+				824A9E391724E58200C9BD79 /* InitialViewController.xib */,
+				824A9E381724E58200C9BD79 /* InitialViewController.m */,
+				824A9E371724E58100C9BD79 /* InitialViewController.h */,
+			);
+			name = uselater;
+			sourceTree = "<group>";
+		};
 		B78CFC4B17EC4241008AD9C3 /* Model Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -811,9 +838,12 @@
 				824A9E701724F03D00C9BD79 /* Default@2x.png in Resources */,
 				824A9FDF1725079100C9BD79 /* openssl_license.txt in Resources */,
 				824A9FE61725079100C9BD79 /* LICENSE in Resources */,
-				B787750A17EAE4B400EFAFD1 /* MasterViewController.xib in Resources */,
 				B78CFC4A17EC30F0008AD9C3 /* PricingViewController.xib in Resources */,
 				B78CFC5017EC42B0008AD9C3 /* ProductViewController.xib in Resources */,
+				B74D161217F1A8740049F0B0 /* MainWindow.xib in Resources */,
+				B74D161317F1A8740049F0B0 /* SecondDetailView.xib in Resources */,
+				B7B163D217F4B22E0065D8EE /* ContactsViewController.xib in Resources */,
+				B7B163DE17F4FF4C0065D8EE /* AccountsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,9 +863,11 @@
 				B787751817EB07AF00EFAFD1 /* Account.m in Sources */,
 				B787751B17EB0A5C00EFAFD1 /* Contact.m in Sources */,
 				B787751E17EB0AA700EFAFD1 /* ContactsStore.m in Sources */,
-				B78CFC4517EC2692008AD9C3 /* AccountViewController.m in Sources */,
 				B78CFC4917EC30F0008AD9C3 /* PricingViewController.m in Sources */,
 				B78CFC4F17EC42B0008AD9C3 /* ProductViewController.m in Sources */,
+				B74D160D17F1959C0049F0B0 /* DetailViewManager.m in Sources */,
+				B7B163D117F4B22E0065D8EE /* ContactsViewController.m in Sources */,
+				B7B163DD17F4FF4C0065D8EE /* AccountsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -933,7 +965,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -960,7 +992,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

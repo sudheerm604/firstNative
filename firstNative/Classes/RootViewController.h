@@ -24,13 +24,18 @@
 
 #import <UIKit/UIKit.h>
 #import "SFRestAPI.h"
+#import "DetailViewManager.h"
 
-@interface RootViewController : UITableViewController <SFRestDelegate> {
-    
+@interface RootViewController : UIViewController <SFRestDelegate,SubstitutableDetailViewController, UITableViewDataSource, UITableViewDelegate> {
     NSMutableArray *dataRows;
-    IBOutlet UITableView *tableView;    
-
 }
+
+/// Things for IB
+@property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+
+/// SubstitutableDetailViewController
+@property (nonatomic, retain) UIBarButtonItem *navigationPaneBarButtonItem;
 
 @property (nonatomic, strong) NSArray *dataRows;
 @property (nonatomic, copy) NSString *sfdcObject;

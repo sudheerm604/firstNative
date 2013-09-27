@@ -1,19 +1,18 @@
 //
-//  AccountViewController.m
+//  RootViewController.m
 //  firstNative
 //
-//  Created by sudheer mangalpady on 9/20/13.
+//  Created by sudheer mangalpady on 9/24/13.
 //  Copyright (c) 2013 Centurylink. All rights reserved.
 //
 
-#import "AccountViewController.h"
+#import "RootViewController.h"
 
-@interface AccountViewController ()
+@interface RootViewController ()
 
 @end
 
-@implementation AccountViewController
-@synthesize dataRows;
+@implementation RootViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,9 +32,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    SFRestRequest *request = [[SFRestAPI sharedInstance] requestForQuery:@"SELECT Name FROM Account LIMIT 25"];
-    [[SFRestAPI sharedInstance] send:request delegate:self];
-    self.title = @"Accounts";
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,30 +44,27 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.dataRows count];
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell...
-    // Configure the cell to show the data.
-	NSDictionary *obj = [dataRows objectAtIndex:indexPath.row];
-	cell.textLabel.text =  [obj objectForKey:@"Name"];
     
     return cell;
 }
@@ -127,31 +120,5 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
-
-#pragma mark - SFRestAPIDelegate
-
-- (void)request:(SFRestRequest *)request didLoadResponse:(id)jsonResponse {
-    NSArray *records = [jsonResponse objectForKey:@"records"];
-    NSLog(@"request:didLoadResponse: #records: %d", records.count);
-    self.dataRows = records;
-    [self.tableView reloadData];
-}
-
-
-- (void)request:(SFRestRequest*)request didFailLoadWithError:(NSError*)error {
-    NSLog(@"request:didFailLoadWithError: %@", error);
-    //add your failed error handling here
-}
-
-- (void)requestDidCancelLoad:(SFRestRequest *)request {
-    NSLog(@"requestDidCancelLoad: %@", request);
-    //add your failed error handling here
-}
-
-- (void)requestDidTimeout:(SFRestRequest *)request {
-    NSLog(@"requestDidTimeout: %@", request);
-    //add your failed error handling here
-}
-
 
 @end
